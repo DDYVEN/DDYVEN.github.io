@@ -1,1 +1,9 @@
+/* the name says it all */
+.hide {
+opacity: 0;
+}
 
+/* hide and make the element not count for content scaling */
+.fullhide {
+display: none;
+}
