@@ -66,7 +66,7 @@ let cgen7multi = new Decimal(1) // 7th
 let cgen8multi = new Decimal(1) // 8th
 let cgen9multi = new Decimal(1) // 9th
 let array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
-let bgcv = document.getElementById("bgcselect").value
+let bgcv = Number(document.getElementById("bgcselect").value)
 
 // add button
 function add() {
@@ -105,13 +105,11 @@ function power() {
 function bgcbtn() {
  let bg = document.getElementById("bg")
  let bgbtn = document.getElementById("bgbtn")
- if (bgst == 14) {
- bgst = 0
+ if (bgcv == 14) {
+ bgcv = 0
  } 
- if (bgst == 13) {
- bgst = 14
+ if (bgcv == 13) {
  bg.style = "background: #ddd"
- bgbtn.textContent = "Background color: White"
  if (glowtoggle == false) {
  document.getElementById("counter").style = "color: #000"
  document.getElementById("prestigecounter").style = "color: #000"
@@ -179,15 +177,11 @@ function bgcbtn() {
  document.getElementById("gen9t").style = "text-shadow: 0 0 10px #656565; color: #000"
   }
  }
- if (bgst == 12) {
- bgst = 13
+ if (bgcv == 12) {
  bg.style = "background: #000"
- bgbtn.textContent = "Background color: Black"
  }
- if (bgst == 11) {
- bgst = 12
+ if (bgcv == 11) {
  bg.style = "background: linear-gradient(#000058, #000027)"
- bgbtn.textContent = "Background color: Dark Blue"
  if (glowtoggle == false) {
  document.getElementById("counter").style = "color: #ddd"
  document.getElementById("prestigecounter").style = "color: #ddd"
@@ -256,60 +250,38 @@ function bgcbtn() {
  document.getElementById("gen9t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
   }
  }
- if (bgst == 10) {
- bgst = 11
+ if (bgcv == 10) {
  bg.style = "background: linear-gradient(#ff6731, #aa2400)"
- bgbtn.textContent = "Background color: Orange"
  }
- if (bgst == 9) {
- bgst = 10
+ if (bgcv == 9) {
  bg.style = "background: linear-gradient(#12ffaa, #00aa58)"
- bgbtn.textContent = "Background color: Turquoise"
  }
- if (bgst == 8) {
- bgst = 9
+ if (bgcv == 8) {
  bg.style = "background: linear-gradient(#4ac2ff, #3265aa)"
- bgbtn.textContent = "Background color: Sky Blue (kinda)"
  }
- if (bgst == 7) {
- bgst = 8
+ if (bgcv == 7) {
  bg.style = "background: linear-gradient(#97ff00, #42aa00)"
- bgbtn.textContent = "Background color: Lime"
  }
- if (bgst == 6) {
- bgst = 7
+ if (bgcv == 6) {
  bg.style = "background: linear-gradient(#8903cc, #510086)"
- bgbtn.textContent = "Background color: Purple"
  }
- if (bgst == 5) {
- bgst = 6
+ if (bgcv == 5) {
  bg.style = "background: linear-gradient(#32ffff, #00aaaa)"
- bgbtn.textContent = "Background color: Cyan"
  }
- if (bgst == 4) {
- bgst = 5
+ if (bgcv == 4) {
  bg.style = "background: linear-gradient(#ff7cf6, #aa00aa)"
- bgbtn.textContent = "Background color: Magenta"
  }
- if (bgst == 3) {
- bgst = 4
+ if (bgcv == 3) {
  bg.style = "background: linear-gradient(#ddda6d, #aaaa00)"
- bgbtn.textContent = "Background color: Yellow"
  }
- if (bgst == 2) {
- bgst = 3
+ if (bgcv == 2) {
  bg.style = "background: linear-gradient(#0032ff, #0000aa)"
- bgbtn.textContent = "Background color: Blue"
  }
- if (bgst == 1) {
- bgst = 2
+ if (bgcv == 1) {
  bg.style = "background: linear-gradient(#59d760, #00aa00)"
- bgbtn.textContent = "Background color: Green"
  }
- if (bgst == 0) {
- bgst = 1
+ if (bgcv == 0) {
  bg.style = "background: linear-gradient(#ff0000, #aa0000)"
- bgbtn.textContent = "Background color: Red"
  }
 }
 
