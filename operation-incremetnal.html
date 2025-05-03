@@ -1,1 +1,88 @@
-
+<html>
+ <head>
+  <link rel="icon" type="image/png" href="https://cdn.glitch.global/d6aeade1-84a3-4e62-8d88-44b591da46e8/plus.webp?v=1741812020580">
+  <title>Operation Incremetnal</title>
+  <meta property="og:title" content="Operation Incremetnal">
+  <meta property="og:description" content="what do I type here?">
+  <meta property="og:image" content="https://cdn.glitch.global/d6aeade1-84a3-4e62-8d88-44b591da46e8/plus.webp?v=1741812020580">
+  <script src="break_eternity.js"></script>
+  <script src="operation-incremetnal.js"></script>
+  <link rel="stylesheet" href="/operation-incremetnal.css">
+ </head>
+ <body id="bg" style="background: #ddd">
+  <h1 id="jsdisabled">If u see this text, u have javascript disabled. To play this incremetnal, please enable js!!</h1>
+  <h1 id="counter" class="idk">0 counters</h1>
+  <header id="maxmsg"></header>
+  <button onclick="add()" id="add" style="width: 50px; height: 50px; border-radius: 7px; border-color: #7ad67e; background: linear-gradient(to right bottom, #59d760, #319740); position: relative;">+1</button>
+  <button onclick="multi()" id="multi" class="hide" style="width: 64px; height: 35px; border-radius: 6px; border-color: #9235cc; background: linear-gradient(to right bottom, #8100cc, #58008d); position: relative;">*1.01</button>
+  <button onclick="power()" id="power" class="hide" style="width: 64px; height: 35px; border-radius: 6px; border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52); position: relative;">^1.001</button>
+  <header id="imgn"></header>
+  <hr>
+  <h1 id="prestigecounter">0 prestige counters</h1>
+  <button onclick="prestige()" id="a" style="">Reset counter to add (counter/10) prestige counters</button>
+  <div id="prestigetab" class="fullhide">
+  <button onclick="upgrade1()" id="b" style="">+1 counter/s (costs 1 prestige counter)</button>
+  <button onclick="upgrade2()" id="c" style="">Buff add button and counter/s by 1 (costs 10 prestige counters)</button>
+  <button onclick="upgrade3()" id="d" style="">Multiply counter limit by 1000 (costs 200 prestige counters)</button>
+  <hr>
+  <button onclick="unlockcountergens()" id="cgenunlockbtn">Unlock COUNTER GENERATORS (costs 100 prestige counters)</button>
+  <div id="cgentab" class="fullhide">
+  <h2 id="cgenstat"></h2>
+  <header></header>
+  <strong><header id="gen1t">0 first generators</header></strong>
+  <button id="gen1btn" onclick="gen1purchase()">Add 1 first generator (costs 20 prestige counters)</button>
+  <strong><header id="gen2t">0 second generators</header></strong>
+  <button id="gen2btn" onclick="gen2purchase()">Add 1 second generator (costs 200 prestige counters)</button>
+  <strong><header id="gen3t">0 third generators</header></strong>
+  <button id="gen3btn" onclick="gen3purchase()">Add 1 third generator (costs 20000 prestige counters)</button>
+  <strong><header id="gen4t">0 fourth generators</header></strong>
+  <button id="gen4btn" onclick="gen4purchase()">Add 1 fourth generator (costs 20000000 prestige counters)</button>
+  <strong><header id="gen5t">0 fifth generators</header></strong>
+  <button id="gen5btn" onclick="gen5purchase()">Add 1 fifth generator (costs 20000000000000 prestige counters)</button>
+  <strong><header id="gen6t">0 sixth generators</header></strong>
+  <button id="gen6btn" onclick="gen6purchase()">Add 1 sixth generator (costs 2e21 prestige counters)</button>
+  <strong><header id="gen7t">0 seventh generators</header></strong>
+  <button id="gen7btn" onclick="gen7purchase()">Add 1 seventh generator (costs 2e31 prestige counters)</button>
+  <strong><header id="gen8t">0 eighth generators</header></strong>
+  <button id="gen8btn" onclick="gen8purchase()">Add 1 eighth generator (costs 2e60 prestige counters)</button>
+  <strong><header id="gen9t">0 ninth generators</header></strong>
+  <button id="gen9btn" onclick="gen9purchase()">Add 1 ninth generator (costs 2e120 prestige counters)</button>
+  </div>
+  <div id="multitab" class="fullhide">
+  <hr>
+  <button onclick="unlockmulti()" id="a2">Unlock MULTIPLYING (costs 50000000000 prestige counters)</button>
+  </div>
+  </div>
+  <hr>
+  <strong id="inf%2">% to infinity:</strong>
+  <h1 id="inf%">0%</h1>
+  <h1 id="end"></h1>
+  <button onclick="idk()" id="powerprestige" style="background: linear-gradient(to right bottom, #aaaaaa, #767676)">Requires infinite counters</button>
+  <!--
+  <button onclick="upgrade8()" id="t">Multiply multi button by 1.08 (costs 1 power counter)</button> 
+  <button onclick="unlock6()" id="u">Unleash the power of power counters to unlock the power button (costs 10 power counters)</button>
+  -->
+  <hr>
+  <h1 id="achtext">Achievements</h1>
+  <strong><header id="ach1">First counter</header></strong>
+  <header id="ach1t">Click the add button</header>
+  <strong><header id="ach2">Every incremetnal has this</header></strong>
+  <header id="ach2t">Prestige</header>
+  <strong><header id="ach3">Definitely original feature and not taken from another game</header></strong>
+  <header id="ach3t">Unlock counter generators</header>
+  <strong><header id="ach9">Honestly idk what to name this achievement</header></strong>
+  <header id="ach9t">Reach Infinity</header>
+  <strong><header id="achi">Negative?</header></strong>
+  <header id="achit">Make your counters negative (tip: u can't do this without cheating, at least for now)</header>
+  <strong><header id="sach1">But it's so choppy...</header></strong>
+  <header id="sach1t">Figure out the update rate slider doesn't work</header>
+  <hr>
+  <h1 id="stgstext">Settings</h1>
+  <header id="tpstext">Update rate</header> 1
+  <input type="range" min="1" max="240" value="20" id="tps" list="array" onclick="secretach1()"> 240
+  <header></header>
+  <button id="bgbtn" onclick="bgcbtn()">Background color: White</button>
+  <header></header>
+  <button id="glow" onclick="glow()">Text glow: off</button>
+ </body>
+</html>
