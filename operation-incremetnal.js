@@ -67,7 +67,7 @@ let cgen8multi = new Decimal(1) // 8th
 let cgen9multi = new Decimal(1) // 9th
 let array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
 let bgcvs = document.getElementById("bgcselect")
-let bgcv = Number(bgcvs.value)
+let bgcv = Number(bgcvs.options[bgcvs.selectedIndex].value)
 
 // add button
 function add() {
