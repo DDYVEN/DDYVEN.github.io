@@ -92,7 +92,6 @@ function power() {
  }
  else {
  // that one conversation u have when u try power with negative counters
- // wow this is less code for my cpu to execute 
  tgl = tgl + 1
  if (tgl == 12) {
  tgl = 0
