@@ -111,127 +111,128 @@ function bgcbtn() {
  if (bgcv == 13) {
  bg.style = "background: #ddd"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ // def not copy pasted from somewhere else (idk what jquery is)
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 12) {
  bg.style = "background: #000"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #ddd"
+ $('a').css('color', '#ddd');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
+ $('a').css('color', '#ddd;', 'text-shadow', '0 0 10px #ddd');
   }
  }
  if (bgcv == 11) {
  bg.style = "background: linear-gradient(#000058, #000027)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #ddd"
+ $('a').css('color', '#ddd');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
+ $('a').css('color', '#ddd;', 'text-shadow', '0 0 10px #ddd');
   }
  }
  if (bgcv == 10) {
  bg.style = "background: linear-gradient(#ff6731, #aa2400)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 9) {
  bg.style = "background: linear-gradient(#12ffaa, #00aa58)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 8) {
  bg.style = "background: linear-gradient(#4ac2ff, #3265aa)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 7) {
  bg.style = "background: linear-gradient(#97ff00, #42aa00)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 6) {
  bg.style = "background: linear-gradient(#8903cc, #510086)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 5) {
  bg.style = "background: linear-gradient(#32ffff, #00aaaa)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 4) {
  bg.style = "background: linear-gradient(#ff7cf6, #aa00aa)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 3) {
  bg.style = "background: linear-gradient(#ddda6d, #aaaa00)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 2) {
  bg.style = "background: linear-gradient(#0032ff, #0000aa)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 1) {
  bg.style = "background: linear-gradient(#59d760, #00aa00)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 0) {
  bg.style = "background: linear-gradient(#ff0000, #aa0000)"
  if (glowtoggle == false) {
- document.getElementsByName("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
 }
@@ -243,19 +244,20 @@ if (glowtoggle == false) {
  document.getElementById("glow").textContent = "Text glow: on"
  if (bgst == 12 || bgst == 13) {
  document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #ddd');
  }
  else {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000"
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #000');
   }
  }
  else {
  document.getElementById("glow").textContent = "Text glow: off"
  glowtoggle = false
  if (bgst == 12 || bgst == 13) {
- document.getElementsByName("a").style = "color: #ddd"
+ $('a').css('color', '#ddd');
  }
  else {
- document.getElementById("a").style = "color: #000"
+ $('a').css('color', '#000');
   }
  }
 }
