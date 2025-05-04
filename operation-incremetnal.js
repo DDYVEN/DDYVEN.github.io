@@ -111,177 +111,128 @@ function bgcbtn() {
  if (bgcv == 13) {
  bg.style = "background: #ddd"
  if (glowtoggle == false) {
- document.getElementById("counter").style = "color: #000"
- document.getElementById("prestigecounter").style = "color: #000"
- document.getElementById("imgn").style = "color: #000"
- document.getElementById("inf%2").style = "color: #000"
- document.getElementById("inf%").style = "color: #000"
- document.getElementById("end").style = "color: #000"
- document.getElementById("achtext").style = "color: #000"
- document.getElementById("ach1").style = "color: #000"
- document.getElementById("ach2").style = "color: #000"
- document.getElementById("ach3").style = "color: #000"
- document.getElementById("ach9").style = "color: #000"
- document.getElementById("achi").style = "color: #000"
- document.getElementById("sach1").style = "color: #000"
- document.getElementById("ach1t").style = "color: #000"
- document.getElementById("ach2t").style = "color: #000"
- document.getElementById("ach3t").style = "color: #000"
- document.getElementById("ach9t").style = "color: #000"
- document.getElementById("achit").style = "color: #000"
- document.getElementById("sach1t").style = "color: #000"
- document.getElementById("stgstext").style = "color: #000"
- document.getElementById("tpstext").style = "color: #000"
- document.getElementById("maxmsg").style = "color: #000"
- document.getElementById("gen1t").style = "color: #000"
- document.getElementById("gen2t").style = "color: #000"
- document.getElementById("gen3t").style = "color: #000"
- document.getElementById("gen4t").style = "color: #000"
- document.getElementById("gen5t").style = "color: #000"
- document.getElementById("gen6t").style = "color: #000"
- document.getElementById("gen7t").style = "color: #000"
- document.getElementById("gen8t").style = "color: #000"
- document.getElementById("gen9t").style = "color: #000"
+ document.getElementsByName("a").style = "color: #000"
   }
  else {
- document.getElementById("counter").style = "text-shadow: 0 0 10px #656565; color: #000" 
- document.getElementById("prestigecounter").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("imgn").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("inf%2").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("inf%").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("end").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achtext").style = "text-shadow: 0 0 10px #656565; color: #000" 
- document.getElementById("ach1").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach2").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach3").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach9").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achi").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("sach1").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach2t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach3t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach9t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achit").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("sach1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("stgstext").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("tpstext").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("maxmsg").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen2t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen3t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen4t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen5t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen6t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen7t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen8t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen9t").style = "text-shadow: 0 0 10px #656565; color: #000"
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
   }
  }
  if (bgcv == 12) {
  bg.style = "background: #000"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #ddd"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
+  }
  }
  if (bgcv == 11) {
  bg.style = "background: linear-gradient(#000058, #000027)"
  if (glowtoggle == false) {
- document.getElementById("counter").style = "color: #ddd"
- document.getElementById("prestigecounter").style = "color: #ddd"
- document.getElementById("imgn").style = "color: #ddd"
- document.getElementById("inf%2").style = "color: #ddd"
- document.getElementById("inf%").style = "color: #ddd"
- document.getElementById("end").style = "color: #ddd"
- document.getElementById("achtext").style = "color: #ddd"
- document.getElementById("ach1").style = "color: #ddd"
- document.getElementById("ach2").style = "color: #ddd"
- document.getElementById("ach3").style = "color: #ddd"
- document.getElementById("ach9").style = "color: #ddd"
- document.getElementById("achi").style = "color: #ddd"
- document.getElementById("sach1").style = "color: #ddd"
- document.getElementById("ach1t").style = "color: #ddd"
- document.getElementById("ach2t").style = "color: #ddd"
- document.getElementById("ach3t").style = "color: #ddd"
- document.getElementById("ach9t").style = "color: #ddd"
- document.getElementById("achit").style = "color: #ddd"
- document.getElementById("sach1t").style = "color: #ddd"
- document.getElementById("stgstext").style = "color: #ddd"
- document.getElementById("tpstext").style = "color: #ddd"
- document.getElementById("maxmsg").style = "color: #ddd"
- document.getElementById("gen1t").style = "color: #ddd"
- document.getElementById("gen2t").style = "color: #ddd"
- document.getElementById("gen3t").style = "color: #ddd"
- document.getElementById("gen4t").style = "color: #ddd"
- document.getElementById("gen5t").style = "color: #ddd"
- document.getElementById("gen6t").style = "color: #ddd"
- document.getElementById("gen7t").style = "color: #ddd"
- document.getElementById("gen8t").style = "color: #ddd"
- document.getElementById("gen9t").style = "color: #ddd"
-
+ document.getElementsByName("a").style = "color: #ddd"
   }
  else {
- document.getElementById("counter").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
- document.getElementById("prestigecounter").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("imgn").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("inf%2").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("inf%").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("end").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achtext").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
- document.getElementById("ach1").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach2").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach3").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach9").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achi").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("sach1").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach2t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach3t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach9t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achit").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("sach1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("stgstext").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("tpstext").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("maxmsg").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen2t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen3t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen4t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen5t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen6t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen7t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen8t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen9t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
   }
  }
  if (bgcv == 10) {
  bg.style = "background: linear-gradient(#ff6731, #aa2400)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 9) {
  bg.style = "background: linear-gradient(#12ffaa, #00aa58)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 8) {
  bg.style = "background: linear-gradient(#4ac2ff, #3265aa)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 7) {
  bg.style = "background: linear-gradient(#97ff00, #42aa00)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 6) {
  bg.style = "background: linear-gradient(#8903cc, #510086)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 5) {
  bg.style = "background: linear-gradient(#32ffff, #00aaaa)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 4) {
  bg.style = "background: linear-gradient(#ff7cf6, #aa00aa)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 3) {
  bg.style = "background: linear-gradient(#ddda6d, #aaaa00)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 2) {
  bg.style = "background: linear-gradient(#0032ff, #0000aa)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 1) {
  bg.style = "background: linear-gradient(#59d760, #00aa00)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
  if (bgcv == 0) {
  bg.style = "background: linear-gradient(#ff0000, #aa0000)"
+ if (glowtoggle == false) {
+ document.getElementsByName("a").style = "color: #000"
+  }
+ else {
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000" 
+  }
  }
 }
 
@@ -291,140 +242,20 @@ if (glowtoggle == false) {
  glowtoggle = true
  document.getElementById("glow").textContent = "Text glow: on"
  if (bgst == 12 || bgst == 13) {
- document.getElementById("counter").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
- document.getElementById("prestigecounter").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("imgn").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("inf%2").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("inf%").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("end").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achtext").style = "text-shadow: 0 0 10px #ddd; color: #ddd" 
- document.getElementById("ach1").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach2").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach3").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach9").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achi").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("sach1").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach2t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach3t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("ach9t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("achit").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("sach1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("stgstext").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("tpstext").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("maxmsg").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen1t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen2t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen3t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen4t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen5t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen6t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen7t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen8t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- document.getElementById("gen9t").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
  }
  else {
- document.getElementById("counter").style = "text-shadow: 0 0 10px #656565; color: #000" 
- document.getElementById("prestigecounter").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("imgn").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("inf%2").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("inf%").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("end").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achtext").style = "text-shadow: 0 0 10px #656565; color: #000" 
- document.getElementById("ach1").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach2").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach3").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach9").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achi").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("sach1").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach2t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach3t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("ach9t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("achit").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("sach1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("stgstext").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("tpstext").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("maxmsg").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen1t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen2t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen3t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen4t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen5t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen6t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen7t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen8t").style = "text-shadow: 0 0 10px #656565; color: #000"
- document.getElementById("gen9t").style = "text-shadow: 0 0 10px #656565; color: #000"
+ document.getElementsByName("a").style = "text-shadow: 0 0 10px #656565; color: #000"
   }
  }
  else {
  document.getElementById("glow").textContent = "Text glow: off"
  glowtoggle = false
  if (bgst == 12 || bgst == 13) {
- document.getElementById("counter").style = "color: #ddd" 
- document.getElementById("prestigecounter").style = "color: #ddd"
- document.getElementById("imgn").style = "color: #ddd"
- document.getElementById("inf%2").style = "color: #ddd"
- document.getElementById("inf%").style = "color: #ddd"
- document.getElementById("end").style = "color: #ddd"
- document.getElementById("achtext").style = "color: #ddd" 
- document.getElementById("ach1").style = "color: #ddd"
- document.getElementById("ach2").style = "color: #ddd"
- document.getElementById("ach3").style = "color: #ddd"
- document.getElementById("ach9").style = "color: #ddd"
- document.getElementById("achi").style = "color: #ddd"
- document.getElementById("sach1").style = "color: #ddd"
- document.getElementById("ach1t").style = "color: #ddd"
- document.getElementById("ach2t").style = "color: #ddd"
- document.getElementById("ach3t").style = "color: #ddd"
- document.getElementById("ach9t").style = "color: #ddd"
- document.getElementById("achit").style = "color: #ddd"
- document.getElementById("sach1t").style = "color: #ddd"
- document.getElementById("stgstext").style = "color: #ddd"
- document.getElementById("tpstext").style = "color: #ddd"
- document.getElementById("maxmsg").style = "color: #ddd"
- document.getElementById("gen1t").style = "color: #ddd"
- document.getElementById("gen2t").style = "color: #ddd"
- document.getElementById("gen3t").style = "color: #ddd"
- document.getElementById("gen4t").style = "color: #ddd"
- document.getElementById("gen5t").style = "color: #ddd"
- document.getElementById("gen6t").style = "color: #ddd"
- document.getElementById("gen7t").style = "color: #ddd"
- document.getElementById("gen8t").style = "color: #ddd"
- document.getElementById("gen9t").style = "color: #ddd"
+ document.getElementsByName("a").style = "color: #ddd"
  }
  else {
- document.getElementById("counter").style = "color: #000" 
- document.getElementById("prestigecounter").style = "color: #000"
- document.getElementById("imgn").style = "color: #000"
- document.getElementById("inf%2").style = "color: #000"
- document.getElementById("inf%").style = "color: #000"
- document.getElementById("end").style = "color: #000"
- document.getElementById("achtext").style = "color: #000" 
- document.getElementById("ach1").style = "color: #000"
- document.getElementById("ach2").style = "color: #000"
- document.getElementById("ach3").style = "color: #000"
- document.getElementById("ach9").style = "color: #000"
- document.getElementById("achi").style = "color: #000"
- document.getElementById("sach1").style = "color: #000"
- document.getElementById("ach1t").style = "color: #000"
- document.getElementById("ach2t").style = "color: #000"
- document.getElementById("ach3t").style = "color: #000"
- document.getElementById("ach9t").style = "color: #000"
- document.getElementById("achit").style = "color: #000"
- document.getElementById("sach1t").style = "color: #000"
- document.getElementById("stgstext").style = "color: #000"
- document.getElementById("tpstext").style = "color: #000"
- document.getElementById("maxmsg").style = "color: #000"
- document.getElementById("gen1t").style = "color: #000"
- document.getElementById("gen2t").style = "color: #000"
- document.getElementById("gen3t").style = "color: #000"
- document.getElementById("gen4t").style = "color: #000"
- document.getElementById("gen5t").style = "color: #000"
- document.getElementById("gen6t").style = "color: #000"
- document.getElementById("gen7t").style = "color: #000"
- document.getElementById("gen8t").style = "color: #000"
- document.getElementById("gen9t").style = "color: #000"
+ document.getElementById("a").style = "color: #000"
   }
  }
 }
