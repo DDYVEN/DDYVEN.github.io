@@ -13,59 +13,60 @@ x.equals(y) && y.equals(z) && x.equals(z); // true
 
 // don't question my way of coding pls
 let bgst = 0
-let tgl = -1
-let counter = new Decimal // what should I even name this other than "counter"?
-let prestigecounter = new Decimal // same here
-let powercounter = new Decimal // I have no ideas
-let autoclicker = new Decimal // don't ask why it's called autoclicker lol
-let cost1 = new Decimal(1) // first price of upgrade 1
-let cost2 = new Decimal(10) // first price of upgrade 2
-let cost3 = new Decimal(200) // first price of upgrade 3
-let cost8 = new Decimal(1) // first price of upgrade 8
-let tps = 20 // update rate. default is 20 (which is 50ms. I already added a slider but the problem is that setInterval only reads the interval once, which leads to inaccurate tick calcs. the slider won't work until I find a solution to this)
-let upg2b = new Decimal(1) // upgrade 2 buff (add buff)
-let upg8b = new Decimal(1.01) // upgrade 8 buff (multi buff)
-let unlockedmulti = false // basically tells if multiplying is unlocked or not
-let maxcounter = new Decimal(1e3) // 1000
-let unlockedpower = false // same thing here
-let infcount = new Decimal(0) // COUNT, not counter
-let ach1s = false //
-let ach2s = false //
-let secretach1s = false //
-let inf = new Decimal('1.8e308')
-let array = [20, 30, 60, 120, 240] // this is supposed to be used for the update rate slider
-let firstinfreached = false // 
-let glowtoggle = false // glowing text
-let unlockedptab = false // tells if prestige tab is unlocked or not
-let unlockedcountergens = false // read above
-let cgen1 = new Decimal // 1st counter generator
-let cgen2 = new Decimal // 2nd
-let cgen3 = new Decimal // 3rd
-let cgen4 = new Decimal // 4th
-let cgen5 = new Decimal // 5th
-let cgen6 = new Decimal // 6th
-let cgen7 = new Decimal // 7th
-let cgen8 = new Decimal // 8th
-let cgen9 = new Decimal // 9th
-let cgen1cost = new Decimal(20) // 1st counter generator price
-let cgen2cost = new Decimal(200) // 2nd
-let cgen3cost = new Decimal(2e4) // 3rd
-let cgen4cost = new Decimal(2e7) // 4th
-let cgen5cost = new Decimal(2e14) // 5th
-let cgen6cost = new Decimal(2e21) // 6th
-let cgen7cost = new Decimal(2e31) // 7th
-let cgen8cost = new Decimal(2e60) // 8th
-let cgen9cost = new Decimal(2e120) // 9th
-let cgen1multi = new Decimal(1) // 1st counter generator
-let cgen2multi = new Decimal(1) // 2nd
-let cgen3multi = new Decimal(1) // 3rd
-let cgen4multi = new Decimal(1) // 4th
-let cgen5multi = new Decimal(1) // 5th
-let cgen6multi = new Decimal(1) // 6th
-let cgen7multi = new Decimal(1) // 7th
-let cgen8multi = new Decimal(1) // 8th
-let cgen9multi = new Decimal(1) // 9th
-let array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
+, tgl = -1
+, counter = new Decimal // what should I even name this other than "counter"?
+, prestigecounter = new Decimal // same here
+, powercounter = new Decimal // I have no ideas
+, autoclicker = new Decimal // don't ask why it's called autoclicker lol
+, cost1 = new Decimal(1) // first price of upgrade 1
+, cost2 = new Decimal(10) // first price of upgrade 2
+, cost3 = new Decimal(200) // first price of upgrade 3
+, cost8 = new Decimal(1) // first price of upgrade 8
+, tps = 20 // update rate. default is 20 (which is 50ms. I already added a slider but the problem is that setInterval only reads the interval once, which leads to inaccurate tick calcs. the slider won't work until I find a solution to this)
+, upg2b = new Decimal(1) // upgrade 2 buff (add buff)
+, upg8b = new Decimal(1.01) // upgrade 8 buff (multi buff)
+, unlockedmulti = false // basically tells if multiplying is unlocked or not
+, maxcounter = new Decimal(1e3) // 1000
+, unlockedpower = false // same thing here
+, infcount = new Decimal(0) // COUNT, not counter
+, ach1s = false //
+, ach2s = false //
+, secretach1s = false //
+, array = [20, 30, 60, 120, 240] // this is supposed to be used for the update rate slider
+, firstinfreached = false // 
+, glowtoggle = false // glowing text
+, unlockedptab = false // tells if prestige tab is unlocked or not
+, unlockedcountergens = false // read above
+, cgen1 = new Decimal // 1st counter generator
+, cgen2 = new Decimal // 2nd
+, cgen3 = new Decimal // 3rd
+, cgen4 = new Decimal // 4th
+, cgen5 = new Decimal // 5th
+, cgen6 = new Decimal // 6th
+, cgen7 = new Decimal // 7th
+, cgen8 = new Decimal // 8th
+, cgen9 = new Decimal // 9th
+, cgen1cost = new Decimal(20) // 1st counter generator price
+, cgen2cost = new Decimal(200) // 2nd
+, cgen3cost = new Decimal(2e4) // 3rd
+, cgen4cost = new Decimal(2e7) // 4th
+, cgen5cost = new Decimal(2e14) // 5th
+, cgen6cost = new Decimal(2e21) // 6th
+, cgen7cost = new Decimal(2e31) // 7th
+, cgen8cost = new Decimal(2e60) // 8th
+, cgen9cost = new Decimal(2e120) // 9th
+, cgen1multi = new Decimal(1) // 1st counter generator
+, cgen2multi = new Decimal(1) // 2nd
+, cgen3multi = new Decimal(1) // 3rd
+, cgen4multi = new Decimal(1) // 4th
+, cgen5multi = new Decimal(1) // 5th
+, cgen6multi = new Decimal(1) // 6th
+, cgen7multi = new Decimal(1) // 7th
+, cgen8multi = new Decimal(1) // 8th
+, cgen9multi = new Decimal(1) // 9th
+
+const array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
+const inf = new Decimal('1.8e308')
 
 // add button
 function add() {
@@ -559,7 +560,7 @@ setInterval(function tick() {
     document.getElementById("end").textContent = "You did it! (yes infinity is the current endgame)"
     document.getElementById("powerprestige").textContent = "Reset ALL progress to add 1 POWER counter (coming soon! or never)"
     document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)"
-    document.getElementById("ach9").textContent= "Honestly idk what to name this achievement (nice you did it)"
+    document.getElementById("ach9").textContent= "The limit (nice you did it)"
     }
     else {
     document.getElementById("inf%").textContent = ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2)
@@ -589,7 +590,7 @@ setInterval(function tick() {
   }
   else {
    if (counter.greaterThan('1.79e308') && firstinfreached == false) {
-   a.textContent = "You have too many counters to prestige (yes I'm that uncreative)"
+   a.textContent = "You have too many counters to prestige"
    a.style = "background: linear-gradient(to right bottom, #aaaaaa, #767676)"
    }
    else {
