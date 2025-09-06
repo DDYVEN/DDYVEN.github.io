@@ -26,7 +26,6 @@ let bgst = 0
 , upg2b = new Decimal(1) // upgrade 2 buff (add buff)
 , upg8b = new Decimal(1.01) // upgrade 8 buff (multi buff)
 , unlockedmulti = false // basically tells if multiplying is unlocked or not
-, maxcounter = new Decimal(1e3) // 1000
 , unlockedpower = false // same thing here
 , infcount = new Decimal(0) // COUNT, not counter
 , ach1s = false //
@@ -66,7 +65,7 @@ let bgst = 0
 , cgen9multi = new Decimal(1) // 9th
 
 const array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
-const inf = new Decimal('1.8e308')
+, inf = new Decimal('1.8e308')
 
 // add button
 function add() {
@@ -310,17 +309,7 @@ function upgrade2() {
 }
 
 function upgrade3() {
- if (prestigecounter.equals(cost3) || prestigecounter.greaterThan(cost3)) {
-  prestigecounter = prestigecounter.sub(cost3)
-  cost3 = cost3.mul(1e3)
-  maxcounter = maxcounter.mul(1e3)
-  if (cost3.greaterThan('1e1000')) {
-  document.getElementById("d").textContent = "Multiply counter limit by 1000 (costs "  + cost3.toStringWithDecimalPlaces(3) + " prestige counters"
-  }
-  else {
-  document.getElementById("d").textContent = "Multiply counter limit by 1000 (costs "  + cost3.toStringWithDecimalPlaces(2) + " prestige counters"
-  }
- }
+// unused
 }
 
 function upgrade8() {
@@ -482,29 +471,26 @@ function gen9purchase() {
 // tick calculation
 setInterval(function tick() {
   let c = document.getElementById("counter")
-  let p = document.getElementById("prestigecounter")
+  , p = document.getElementById("prestigecounter")
   // counter/s
   counter = counter.add((autoclicker.divide(tps).mul(upg2b)).add(cgen1.divide(tps).mul(cgen1multi/2)))
-  // max counter (might want to remove/rework this lol)
-  if (counter.equals(maxcounter) || counter.greaterThan(maxcounter)) {
-  counter = maxcounter
-  if (counter < Infinity) {
-  document.getElementById("maxmsg").textContent = "It seems like you can't hold any more counters. Maybe try buying that one upgrade? (it's in the prestige tab if you haven't seen it already)."
+  // 
+  if (counter >= Infinity && firstinfreached === false) {
+  document.getElementById("maxmsg").textContent = "It seems like you have reached infinity. Power prestige to break infinity!"
    }
   else
    {
-  document.getElementById("maxmsg").textContent = "It seems like you can't hold any more counters. Maybe try buying that one up- wait you're telling me that upgrade doesn't work anymore?"
-   }
-  } 
-  else {
   document.getElementById("maxmsg").textContent = null
-  }
+   }
+
   if (counter < 0) {
   document.getElementById("achi").textContent = "Negative? (nice you did it)"
   }
+
   if (prestigecounter == 1) {
   p.textContent = prestigecounter + ".00 prestige counter"
   }
+
   else {
   if (prestigecounter.greaterThan('1e1000')) {
   p.textContent = prestigecounter.toStringWithDecimalPlaces(3) + " prestige counters"
@@ -523,9 +509,6 @@ setInterval(function tick() {
   else {
   c.textContent = counter.toStringWithDecimalPlaces(2) + " counters"
    }
-  }
-  if (counter.equals(maxcounter) || counter.greaterThan(maxcounter)) {
-  c.textContent = counter + " counters (capped)"
   }
   // inf% calc
   // current endgame is 1.79e308 (still need to add a lot of stuff)
@@ -555,8 +538,7 @@ setInterval(function tick() {
    else {
     if (firstinfreached == false) {
     document.getElementById("inf%").textContent = 100 + "%"
-    c.textContent = "Infinite counters"
-    counter = inf.sub(1)
+    c.textContent = "Infinite counters (capped)"
     document.getElementById("end").textContent = "You did it! (yes infinity is the current endgame)"
     document.getElementById("powerprestige").textContent = "Reset ALL progress to add 1 POWER counter (coming soon! or never)"
     document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)"
