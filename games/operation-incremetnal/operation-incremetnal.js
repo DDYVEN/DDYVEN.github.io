@@ -12,22 +12,27 @@ z = new Decimal(x);
 x.equals(y) && y.equals(z) && x.equals(z); // true
 
 // don't question my way of coding pls
+const array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
+, inf = new Decimal('1.8e308')
+, zero = new Decimal(0)
+, one = new Decimal(1)
+
 let bgst = 0
 , tgl = -1
 , counter = new Decimal // what should I even name this other than "counter"?
 , prestigecounter = new Decimal // same here
 , powercounter = new Decimal // I have no ideas
 , autoclicker = new Decimal // don't ask why it's called autoclicker lol
-, cost1 = new Decimal(1) // first price of upgrade 1
+, cost1 = one // first price of upgrade 1
 , cost2 = new Decimal(10) // first price of upgrade 2
 , cost3 = new Decimal(200) // first price of upgrade 3
-, cost8 = new Decimal(1) // first price of upgrade 8
+, cost8 = one // first price of upgrade 8
 , tps = 20 // update rate. default is 20 (which is 50ms. I already added a slider but the problem is that setInterval only reads the interval once, which leads to inaccurate tick calcs. the slider won't work until I find a solution to this)
-, upg2b = new Decimal(1) // upgrade 2 buff (add buff)
+, upg2b = one // upgrade 2 buff (add buff)
 , upg8b = new Decimal(1.01) // upgrade 8 buff (multi buff)
 , unlockedmulti = false // basically tells if multiplying is unlocked or not
 , unlockedpower = false // same thing here
-, infcount = new Decimal(0) // COUNT, not counter
+, infcount = zero // COUNT, not counter
 , ach1s = false //
 , ach2s = false //
 , secretach1s = false //
@@ -54,26 +59,31 @@ let bgst = 0
 , cgen7cost = new Decimal(2e31) // 7th
 , cgen8cost = new Decimal(2e60) // 8th
 , cgen9cost = new Decimal(2e120) // 9th
-, cgen1multi = new Decimal(1) // 1st counter generator
-, cgen2multi = new Decimal(1) // 2nd
-, cgen3multi = new Decimal(1) // 3rd
-, cgen4multi = new Decimal(1) // 4th
-, cgen5multi = new Decimal(1) // 5th
-, cgen6multi = new Decimal(1) // 6th
-, cgen7multi = new Decimal(1) // 7th
-, cgen8multi = new Decimal(1) // 8th
-, cgen9multi = new Decimal(1) // 9th
+, cgen1multi = one // 1st counter generator
+, cgen2multi = one // 2nd
+, cgen3multi = one // 3rd
+, cgen4multi = one // 4th
+, cgen5multi = one // 5th
+, cgen6multi = one // 6th
+, cgen7multi = one // 7th
+, cgen8multi = one // 8th
+, cgen9multi = one // 9th
+, autoprestigetoggle = false
+, unlockedautoprestige = false
 
-const array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
-, inf = new Decimal('1.8e308')
+/* var user = function(attack,health)
+{
+this.attack = attack; 
+this.health = health;
+}; */
+
+
 
 // add button
 function add() {
  ach1s = true
  document.getElementById("ach1").textContent = "First counter (nice you did it)" 
  counter = counter.add(upg2b)
- if (bgst == 9) {
- }
 }
 
 // multi button
@@ -103,28 +113,26 @@ function power() {
 // that one button that changes the background color
 function bgcbtn() {
  let bgcv = Number(document.getElementById("bgcselect").options[document.getElementById("bgcselect").selectedIndex].value)
- let bg = document.getElementById("bg")
- let bgbtn = document.getElementById("bgbtn")
- if (bgcv == 14) {
- bgcv = 0
- } 
+ , bg = document.getElementById("bg")
+ , bgbtn = document.getElementById("bgbtn")
+ 
  if (bgcv == 13) {
  bg.style = "background: #ddd"
  if (glowtoggle == false) {
- // def not copy pasted from somewhere else (idk what jquery is)
- //$('a').css('color', '#000');
+ // def not copy pasted from somewhere else
+ $('a').css('color', '#000');
   }
  else {
- //$('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
   }
  }
  if (bgcv == 12) {
  bg.style = "background: #000"
  if (glowtoggle == false) {
- //$('a').css('color', '#ddd');
+ $('a').css('a', '#ddd');
   }
  else {
- //$('a').css('color', '#ddd;', 'text-shadow', '0 0 10px #ddd');
+ $('a').css('a', '#ddd;', 'text-shadow', '0 0 10px #ddd');
   }
  }
  if (bgcv == 11) {
@@ -175,10 +183,10 @@ function bgcbtn() {
  if (bgcv == 6) {
  bg.style = "background: linear-gradient(#8903cc, #510086)"
  if (glowtoggle == false) {
- //$('a').css('color', '#000');
+ $("a").css('color', '#000');
   }
  else {
- //$('a').css('color', '#000;', 'text-shadow', '0 0 10px #656565');
+ $("a").css("color", "#000;", "text-shadow", "0 0 10px #656565");
   }
  }
  if (bgcv == 5) {
@@ -243,24 +251,24 @@ if (glowtoggle == false) {
  glowtoggle = true
  document.getElementById("glow").textContent = "Text glow: on"
  if (bgst == 12 || bgst == 13) {
- document.getElementsByName("a").style = "text-shadow: 0 0 10px #ddd; color: #ddd"
- //$('a').css('color', '#000;', 'text-shadow', '0 0 10px #ddd');
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #ddd');
  }
  else {
- //$('a').css('color', '#000;', 'text-shadow', '0 0 10px #000');
+ $('a').css('color', '#000;', 'text-shadow', '0 0 10px #000');
   }
  }
  else {
  document.getElementById("glow").textContent = "Text glow: off"
  glowtoggle = false
  if (bgst == 12 || bgst == 13) {
- //$('a').css('color', '#ddd');
+ $('a').css('color', '#ddd');
  }
  else {
- //$('a').css('color', '#000');
+ $('a').css('color', '#000');
   }
  }
 }
+
 // prestige
 function prestige() {
  if (counter.equals(10) || counter.greaterThan(10)) {
@@ -277,8 +285,20 @@ function prestige() {
   }
  }
 
+// power prestige
+function powerprestige() {
+  if (counter.greaterThan(inf) || counter.equals(inf)) {
+    powercounter = powercounter.add(1)
+    infcount = infcount.add(1)
+    counter = zero
+    prestigecounter = zero
+    firstinfreached = true
+    document.getElementById("powertab").classList = ""
+  }
+}
 
 // upgrades
+
 function upgrade1() {
  if (prestigecounter.equals(cost1) || prestigecounter.greaterThan(cost1)) {
   prestigecounter = prestigecounter.sub(cost1)
@@ -313,20 +333,40 @@ function upgrade3() {
 }
 
 function upgrade8() {
- if (powercounter >= 1) {
- upg8b *= 1.08
- if (cost8 <= 5)
- cost8 ++
+ if (powercounter.greaterThan(cost8) || powercounter.equals(cost8)) {
+ powercounter = powercounter.sub(cost8)
+ upg8b = upg8b.mul(1.08)
+ if (cost8.lessThan(5)) {
+ cost8 = cost8.add(1)
  }
  else {
- cost8 *= 2
+ cost8 = cost8.mul(2)
  }
  if (cost8.greaterThan('1e1000')) {
- document.getElementById("t").textContent = "+1 counter/s (costs "  + cost8.toStringWithDecimalPlaces(3) + " prestige counters"
+ document.getElementById("t").textContent = "Multiply multiplying button by 1.08 (costs " + cost8.toStringWithDecimalPlaces(3) + " power counters)"
  }
  else {
- document.getElementById("t").textContent = "+1 counter/s (costs "  + cost8.toStringWithDecimalPlaces(2) + " prestige counters"
+ document.getElementById("t").textContent = "Multiply multiplying button by 1.08 (costs " + cost8.toStringWithDecimalPlaces(2) + " power counters)"
+  }
  }
+}
+
+setInterval(function autoprestige() {
+if (autoprestigetoggle === true) {
+prestige()
+ }
+}, 1e3)
+
+function toggleautoprestige() {
+  if (autoprestigetoggle === true) {
+    autoprestigetoggle = false
+    document.getElementById("toggleautoprestige").textContent = "Auto prestige: OFF"
+  }
+
+  else {
+    autoprestigetoggle = true
+    document.getElementById("toggleautoprestige").textContent = "Auto prestige: ON"
+  }
 }
 
 // upgrades end here
@@ -345,6 +385,17 @@ function unlockcountergens() {
   document.getElementById("ach3").textContent = "Definitely original feature and not taken from another game (nice you did it)"
   }
  }
+}
+
+function unlockautoprestige() {
+  if (unlockedautoprestige === false && (powercounter.greaterThan(1) || powercounter.equals(1))) {
+    powercounter = powercounter.sub(1)
+    autoprestigetoggle = true
+    unlockedautoprestige = true
+    document.getElementById("autoprestige").classList = "fullhide"
+    document.getElementById("autoprestigeresetrate").classList = ""
+    document.getElementById("toggleautoprestige").classList = ""
+  }
 }
 
 // multiplying unlock
@@ -472,25 +523,23 @@ function gen9purchase() {
 setInterval(function tick() {
   let c = document.getElementById("counter")
   , p = document.getElementById("prestigecounter")
+  , p2 = document.getElementById("powercounter")
+
   // counter/s
   counter = counter.add((autoclicker.divide(tps).mul(upg2b)).add(cgen1.divide(tps).mul(cgen1multi/2)))
   // 
-  if (counter >= Infinity && firstinfreached === false) {
+  if ((counter.greaterThan(inf) || counter.equals(inf)) && firstinfreached === false) {
   document.getElementById("maxmsg").textContent = "It seems like you have reached infinity. Power prestige to break infinity!"
+  counter = inf
    }
   else
    {
   document.getElementById("maxmsg").textContent = null
    }
 
-  if (counter < 0) {
-  document.getElementById("achi").textContent = "Negative? (nice you did it)"
-  }
-
   if (prestigecounter == 1) {
   p.textContent = prestigecounter + ".00 prestige counter"
   }
-
   else {
   if (prestigecounter.greaterThan('1e1000')) {
   p.textContent = prestigecounter.toStringWithDecimalPlaces(3) + " prestige counters"
@@ -499,6 +548,7 @@ setInterval(function tick() {
   p.textContent = prestigecounter.toStringWithDecimalPlaces(2) + " prestige counters"
    }
   }
+
   if (counter.equals(1)) {
   c.textContent = counter + ".00 counter"
   }
@@ -509,15 +559,35 @@ setInterval(function tick() {
   else {
   c.textContent = counter.toStringWithDecimalPlaces(2) + " counters"
    }
+
+  if (powercounter.equals(1)) {
+  p2.textContent = powercounter + ".00 power counter"
   }
+  else {
+  if (counter.greaterThan('1e1000')) {
+  p2.textContent = powercounter.toStringWithDecimalPlaces(3) + " power counters"
+  }
+  else {
+  p2.textContent = powercounter.toStringWithDecimalPlaces(2) + " power counters"
+   }
+  
+  }
+
+
+  if (counter < 0) {
+  document.getElementById("achi").textContent = "Negative? (nice you did it)"
+  }
+
+
   // inf% calc
   // current endgame is 1.79e308 (still need to add a lot of stuff)
-  if (counter == 0) {
+
+  if (counter.lessThan(1) || counter.equals(1)) {
   document.getElementById("inf%").textContent = 0 + "%"
   }
   else {
    if (counter.lessThan(inf)) {
-   if (counter < 0) {
+   if (counter.lessThan(0)) {
    document.getElementById("inf%").textContent = "???%" // "-" + ((((counter.abs()).log(10)).divide(inf.log(10))).mul(100)).toStringWithDecimalPlaces(2) + "%"
    document.getElementById("inf%2").textContent = "% to infinity:" // "???"
    }
@@ -533,32 +603,32 @@ setInterval(function tick() {
     document.getElementById("powerprestige").style = "background: linear-gradient(to right bottom, #aaaaaa, #767676)"
     }
    }
-   document.getElementById("end").textContent = null
    }
    else {
     if (firstinfreached == false) {
     document.getElementById("inf%").textContent = 100 + "%"
     c.textContent = "Infinite counters (capped)"
-    document.getElementById("end").textContent = "You did it! (yes infinity is the current endgame)"
-    document.getElementById("powerprestige").textContent = "Reset ALL progress to add 1 POWER counter (coming soon! or never)"
+    document.getElementById("powerprestige").textContent = "Reset ALL progress to add 1 POWER COUNTER"
     document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)"
     document.getElementById("ach9").textContent= "The limit (nice you did it)"
     }
     else {
     document.getElementById("inf%").textContent = ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2)
     document.getElementById("inf%2").textContent = "Infinities gained on power prestige:"
-    document.getElementById("end").textContent = null
-    if (counter.greaterThan(inf)) {
-    document.getElementById("powerprestige").textContent = "Reset all progress to gain " + ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2) + " infinities and x power counter(s)"
-    document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)" 
-     }
-    else {
-    document.getElementById("powerprestige").textContent = "Requires 1.8e308 counters"
-    document.getElementById("powerprestige").style = "background: linear-gradient(to right bottom, #aaaaaa, #767676)"
-    }
    }
   }
  }
+
+if (firstinfreached == true) {
+  if (counter.greaterThan(inf)) {
+    document.getElementById("powerprestige").textContent = "Reset all progress to gain " + ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2) + " infinities and x power counter(s)"
+    document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)" 
+  }
+  else {
+    document.getElementById("powerprestige").textContent = "Requires 1.8e308 counters"
+    document.getElementById("powerprestige").style = "background: linear-gradient(to right bottom, #aaaaaa, #767676)"
+  }
+}
  // updates prestige button on tick
  let a = document.getElementById("a")
  if (counter.equals(10)) {
@@ -615,6 +685,7 @@ setInterval(function tick() {
  tgl = -1
  document.getElementById("imgn").textContent = ""
  }
+}
 }, 1e3/tps)
 
 function secretach1() {
