@@ -5,6 +5,7 @@
   <meta property="og:title" content="Operation Incremetnal">
   <meta property="og:description" content="what do I type here?">
   <meta property="og:image" content="https://cdn.glitch.global/d6aeade1-84a3-4e62-8d88-44b591da46e8/plus.webp?v=1741812020580">
+  <script src="jquery.js"></script>
   <script src="/files/notmine/b_e.js"></script>
   <script src="operation-incremetnal.js"></script>
   <link rel="stylesheet" href="operation-incremetnal.css">
@@ -19,10 +20,10 @@
   <header name="a" id="imgn"></header>
   <hr>
   <h1 name="a" id="prestigecounter">0 prestige counters</h1>
-  <button name="a" onclick="prestige()" id="a" style="">Reset counter to add (counter/10) prestige counters</button>
+  <button name="a" onclick="prestige()" id="a">Reset counter to add (counter/10) prestige counters</button>
   <div name="a" id="prestigetab" class="fullhide">
-  <button name="a" onclick="upgrade1()" id="b" style="">+1 counter/s (costs 1 prestige counter)</button>
-  <button name="a" onclick="upgrade2()" id="c" style="">Buff add button and counter/s by 1 (costs 10 prestige counters)</button>
+  <button name="a" onclick="upgrade1()" id="b">+1 counter/s (costs 1 prestige counter)</button>
+  <button name="a" onclick="upgrade2()" id="c">Buff add button and counter/s by 1 (costs 10 prestige counters)</button>
   <hr>
   <button name="a" onclick="unlockcountergens()" id="cgenunlockbtn">Unlock COUNTER GENERATORS (costs 100 prestige counters)</button>
   <div name="a" id="cgentab" class="fullhide">
@@ -53,14 +54,21 @@
   </div>
   </div>
   <hr>
+  <div id="inftab">
   <strong name="a" id="inf%2">% to infinity:</strong>
   <h1 name="a" id="inf%">0%</h1>
-  <h1 name="a" id="end"></h1>
-  <button name="a" onclick="idk()" id="powerprestige" style="background: linear-gradient(to right bottom, #aaaaaa, #767676)">Requires infinite counters</button>
-  <!--
-  <button onclick="upgrade8()" id="t">Multiply multi button by 1.08 (costs 1 power counter)</button> 
-  <button onclick="unlock6()" id="u">Unleash the power of power counters to unlock the power button (costs 10 power counters)</button>
-  -->
+  <button name="a" onclick="powerprestige()" id="powerprestige" style="background: linear-gradient(to right bottom, #aaaaaa, #767676)">Requires infinite counters</button>
+  </div>
+  <div id="powertab" class="fullhide">
+  <hr>
+  <h1 id="powercounter" name="a" class="">0 power counters</h1>
+  <button onclick="unlockautoprestige()" id="autoprestige" style="background: linear-gradient(to right bottom, #28ffff, #1ebfbf); border-color: #69ffff">Automate prestige resets (costs 1 power counter)</button>
+  <header id="autoprestigeresetrate" class="fullhide">Auto prestige rate: 1000ms</header>
+  <button onclick="toggleautoprestige()" id="toggleautoprestige" class="fullhide">Auto prestige: ON</button>
+  <hr>
+  <button onclick="upgrade8()" id="t">Multiply multi button by 1.08 (costs 1 power counter)</button>
+  <button onclick="unlock6()" id="u">Unleash the power of power counters to unlock THE POWER BUTTON (costs 1000000 power counters)</button>
+  </div>
   <hr>
   <h1 name="a" id="achtext">Achievements</h1>
   <strong><header name="a" id="ach1">First counter</header></strong>
@@ -69,8 +77,8 @@
   <header name="a" id="ach2t">Prestige</header>
   <strong><header name="a" id="ach3">Definitely original feature and not taken from another game</header></strong>
   <header name="a" id="ach3t">Unlock counter generators</header>
-  <strong><header name="a" id="ach9">The limit</header></strong>
-  <header name="a" id="ach9t">Get Infinite counters</header>
+  <strong><header name="a" id="ach9">Honestly idk what to name this achievement</header></strong>
+  <header name="a" id="ach9t">Reach Infinity</header>
   <strong><header name="a" id="achi">Negative?</header></strong>
   <header name="a" id="achit">Make your counters negative (tip: u can't do this without cheating, at least for now)</header>
   <strong><header name="a" id="sach1">But it's so choppy...</header></strong>
@@ -98,6 +106,9 @@
   <option value="11">Dark Blue</option>
   </select>
   <header></header>
+  <div id="chat" class="hud" style="right: 8.7px; top: 217.5px; opacity: 1;"><input enterkeyhint="send" style="border-radius: 4.35px; padding: 2.61px; font-size: 15.66px; width: 191.4px; height: 28.71px;" autocomplete="off" id="chat-input" placeholder="Hex codes here..."></div>
+  <header></header>
   <button id="glow" onclick="glow()">Text glow: off</button>
+  <header></header>
  </body>
 </html>
