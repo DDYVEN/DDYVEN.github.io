@@ -4,13 +4,14 @@ abs, neg, round, floor, ceil, trunc, add, sub, mul, div, recip, mod, cmp, cmpabs
 max, min, maxabs, minabs, log, log10, ln, pow, root, factorial, gamma, exp, sqrt, 
 tetrate, iteratedexp, iteratedlog, layeradd10, layeradd, slog, ssqrt, lambertw, 
 linear_sroot, pentate, penta_log, linear_penta_root
-*/
+
 
 x = new Decimal(123.4567);
 y = new Decimal("123456.7e-3");
 z = new Decimal(x);
 x.equals(y) && y.equals(z) && x.equals(z); // true
 
+*/
 // don't question my way of coding pls
 const array2 = ["Something is preventing you from using power...", "You hear a voice...", "???: 'Why do you try this again when you DEEPLY know in your soul it won't work?'", "You: 'Who are you?? And why are you preventing me from using the power button in the first place??'", "???: 'Blame it to my brother, i.'", "You: 'Who is i?'", "???: 'Well... If you raise your counters to 1.001 with a calculator you'll probably figure out who they are.'", "You: 'There's no such thing as a calculator...'", "???: '...'", "???: 'Well, the superior being who's watching us knows what to do.'", "You: 'What?'"] //
 , inf = new Decimal('1.8e308')
@@ -25,7 +26,7 @@ let bgst = 0
 , autoclicker = new Decimal // don't ask why it's called autoclicker lol
 , cost1 = one // first price of upgrade 1
 , cost2 = new Decimal(10) // first price of upgrade 2
-, cost3 = new Decimal(200) // first price of upgrade 3
+, cost3 = new Decimal(200) // first price of upgrade 3 (unused)
 , cost8 = one // first price of upgrade 8
 , tps = 20 // update rate. default is 20 (which is 50ms. I already added a slider but the problem is that setInterval only reads the interval once, which leads to inaccurate tick calcs. the slider won't work until I find a solution to this)
 , upg2b = one // upgrade 2 buff (add buff)
@@ -39,17 +40,17 @@ let bgst = 0
 , array = [20, 30, 60, 120, 240] // this is supposed to be used for the update rate slider
 , firstinfreached = false // 
 , glowtoggle = false // glowing text
-, unlockedptab = false // tells if prestige tab is unlocked or not
+, unlockedprestigetab = false // tells if prestige tab is unlocked or not
 , unlockedcountergens = false // read above
-, cgen1 = new Decimal // 1st counter generator
-, cgen2 = new Decimal // 2nd
-, cgen3 = new Decimal // 3rd
-, cgen4 = new Decimal // 4th
-, cgen5 = new Decimal // 5th
-, cgen6 = new Decimal // 6th
-, cgen7 = new Decimal // 7th
-, cgen8 = new Decimal // 8th
-, cgen9 = new Decimal // 9th
+, cgen1 = zero // 1st counter generator
+, cgen2 = zero // 2nd
+, cgen3 = zero // 3rd
+, cgen4 = zero // 4th
+, cgen5 = zero // 5th
+, cgen6 = zero // 6th
+, cgen7 = zero // 7th
+, cgen8 = zero // 8th
+, cgen9 = zero // 9th
 , cgen1cost = new Decimal(20) // 1st counter generator price
 , cgen2cost = new Decimal(200) // 2nd
 , cgen3cost = new Decimal(2e4) // 3rd
@@ -70,14 +71,19 @@ let bgst = 0
 , cgen9multi = one // 9th
 , autoprestigetoggle = false
 , unlockedautoprestige = false
+, llv = new Audio('audio/Llv-Chnl-n.mp3')
+, loop = 0
+, msc = 0
 
-/* var user = function(attack,health)
-{
-this.attack = attack; 
-this.health = health;
-}; */
-
-
+alert("v0.1.0a update:\
+  Added music\
+  ")
+/*
+console.log("DON'T PASTE OR TYPE CODE THAT YOU'RE NOT SURE OF! \
+IF SOMEONE TOLD YOU TO PUT CODE HERE, DON'T TRUST THEM, THEY'RE LYING. \
+IT MAY HARM YOUR DEVICE OR DO OTHER DANGEROUS STUFF! \
+OTHERWISE DO WHATEVER YOU WANT.") 
+*/
 
 // add button
 function add() {
@@ -109,6 +115,20 @@ function power() {
   }
  }
 }
+
+
+function music() {
+  msc = Number(document.getElementById("musicselect").options[document.getElementById("musicselect").selectedIndex].value)
+  if (msc === 0) llv.pause();
+  if (msc === 1) {llv.play(); llv.currentTime = 0}
+}
+
+setInterval(function musicloop() {
+  // yes I know llv.loop = true exists but I want the music to return to a certain point instead of restarting
+  if (msc === 1 && llv.currentTime >= 207.32) llv.currentTime = 15.2;
+
+},1e3/30)
+
 
 // that one button that changes the background color
 function bgcbtn() {
@@ -277,8 +297,8 @@ function prestige() {
   counter = counter.sub(counter)
   ach2s = true
   document.getElementById("ach2").textContent = "Every incremetnal has this (nice you did it)"
-  if (unlockedptab == false) {
-  unlockedptab = true
+  if (unlockedprestigetab == false) {
+  unlockedprestigetab = true
   document.getElementById("prestigetab").classList = "show"
    }
    }
@@ -288,12 +308,51 @@ function prestige() {
 // power prestige
 function powerprestige() {
   if (counter.greaterThan(inf) || counter.equals(inf)) {
-    powercounter = powercounter.add(1)
-    infcount = infcount.add(1)
+    powercounter = powercounter.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2))
+    infcount = infcount.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2))
     counter = zero
     prestigecounter = zero
     firstinfreached = true
+    autoclicker = zero
+    upg2b = one
+    unlockedmulti = false
+    unlockedcountergens = false
+    unlockedprestigetab = false
+    document.getElementById("multi").classList = "fullhide"
     document.getElementById("powertab").classList = ""
+    document.getElementById("prestigetab").classList = "fullhide"
+    document.getElementById("cgentab").classList = "fullhide"
+    cgen1 = zero
+    cgen2 = zero
+    cgen3 = zero
+    cgen4 = zero
+    cgen5 = zero
+    cgen6 = zero
+    cgen7 = zero
+    cgen8 = zero
+    cgen9 = zero
+    cgen1cost = new Decimal(20)
+    cgen2cost = new Decimal(200)
+    cgen3cost = new Decimal(2e4)
+    cgen4cost = new Decimal(2e7)
+    cgen5cost = new Decimal(2e14)
+    cgen6cost = new Decimal(2e21)
+    cgen7cost = new Decimal(2e31)
+    cgen8cost = new Decimal(2e60)
+    cgen9cost = new Decimal(2e120)
+    document.getElementById("gen1btn").textContent = "Add 1 first generator (costs " + cgen1cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen2btn").textContent = "Add 1 second generator (costs " + cgen2cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen3btn").textContent = "Add 1 third generator (costs " + cgen3cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen4btn").textContent = "Add 1 fourth generator (costs " + cgen4cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen5btn").textContent = "Add 1 fifth generator (costs " + cgen5cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen6btn").textContent = "Add 1 sixth generator (costs " + cgen6cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen7btn").textContent = "Add 1 seventh generator (costs " + cgen7cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen8btn").textContent = "Add 1 eighth generator (costs " + cgen8cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    document.getElementById("gen9btn").textContent = "Add 1 ninth generator (costs " + cgen9cost.toStringWithDecimalPlaces(2) + " prestige counters)"
+    cost1 = one
+    cost2 = new Decimal(10)
+    cost3 = new Decimal(200)
+    cost8 = one
   }
 }
 
@@ -621,7 +680,7 @@ setInterval(function tick() {
 
 if (firstinfreached == true) {
   if (counter.greaterThan(inf)) {
-    document.getElementById("powerprestige").textContent = "Reset all progress to gain " + ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2) + " infinities and x power counter(s)"
+    document.getElementById("powerprestige").textContent = "Reset all progress to gain " + ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2) + " infinities and "+ ((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2) +" power counter(s)"
     document.getElementById("powerprestige").style = "border-color: #fffaad; background: linear-gradient(to right bottom, #fffa6d, #bfbd52)" 
   }
   else {
@@ -629,7 +688,7 @@ if (firstinfreached == true) {
     document.getElementById("powerprestige").style = "background: linear-gradient(to right bottom, #aaaaaa, #767676)"
   }
 }
- // updates prestige button on tick
+ // updates the prestige button
  let a = document.getElementById("a")
  if (counter.equals(10)) {
   a.textContent = "Reset counter to add 1 prestige counter"
