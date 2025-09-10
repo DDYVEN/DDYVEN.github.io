@@ -76,7 +76,7 @@ let bgst = 0
 , msc = 0
 
 alert("v0.1.0a update:\
-  Added music\
+  Added music (find it at the bottom of the page). Fixed power prestige.\
   ")
 /*
 console.log("DON'T PASTE OR TYPE CODE THAT YOU'RE NOT SURE OF! \
