@@ -319,9 +319,15 @@ function powerprestige() {
     unlockedcountergens = false
     unlockedprestigetab = false
     document.getElementById("multi").classList = "fullhide"
+    document.getElementById("multitab").classList = "fullhide"
     document.getElementById("powertab").classList = ""
     document.getElementById("prestigetab").classList = "fullhide"
     document.getElementById("cgentab").classList = "fullhide"
+    document.getElementById("cgenunlockbtn").classList = ""
+    document.getElementById("b").textContent = "+1 counter/s (costs 1 prestige counter)"
+    document.getElementById("c").textContent = "Buff add button and counter/s by 1 (costs 10 prestige counters)"
+    document.getElementById("a2").classList = ""
+    document.getElementById("a2").textContent = "Unlock MULTIPLYING (costs 50000000000 prestige counters)"
     cgen1 = zero
     cgen2 = zero
     cgen3 = zero
@@ -407,6 +413,7 @@ function upgrade8() {
  else {
  document.getElementById("t").textContent = "Multiply multiplying button by 1.08 (costs " + cost8.toStringWithDecimalPlaces(2) + " power counters)"
   }
+ document.getElementById("multi").textContent = "*" + upg8b
  }
 }
 
@@ -464,7 +471,7 @@ function unlockmulti() {
  prestigecounter = prestigecounter.sub(5e10)
  unlockedmulti = true
  document.getElementById("a2").textContent = "Multiplying unlocked"
- document.getElementById("multi").classList = "show"
+ document.getElementById("multi").classList = ""
   }
  }
 }
