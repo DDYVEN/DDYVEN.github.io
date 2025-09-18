@@ -20,10 +20,10 @@ const array2 = ["Something is preventing you from using power...", "You hear a v
 
 let bgst = 0
 , tgl = -1
-, counter = new Decimal // what should I even name this other than "counter"?
-, prestigecounter = new Decimal // same here
-, powercounter = new Decimal // I have no ideas
-, autoclicker = new Decimal // don't ask why it's called autoclicker lol
+, counter = zero // what should I even name this other than "counter"?
+, prestigecounter = zero // same here
+, powercounter = zero // I have no ideas
+, cgen0 = zero // counter/s
 , cost1 = one // first price of upgrade 1
 , cost2 = new Decimal(10) // first price of upgrade 2
 , cost3 = new Decimal(200) // first price of upgrade 3 (unused)
@@ -33,7 +33,7 @@ let bgst = 0
 , upg8b = new Decimal(1.01) // upgrade 8 buff (multi buff)
 , unlockedmulti = false // basically tells if multiplying is unlocked or not
 , unlockedpower = false // same thing here
-, infcount = zero // COUNT, not counter
+, infinities = zero // COUNT, not counter
 , ach1s = false //
 , ach2s = false //
 , secretach1s = false //
@@ -72,7 +72,6 @@ let bgst = 0
 , autoprestigetoggle = false
 , unlockedautoprestige = false
 , llv = new Audio('audio/Llv-Chnl-n.mp3')
-, loop = 0
 , msc = 0
 
 alert("v0.1.0a update:\
@@ -309,11 +308,11 @@ function prestige() {
 function powerprestige() {
   if (counter.greaterThan(inf) || counter.equals(inf)) {
     powercounter = powercounter.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2))
-    infcount = infcount.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2))
+    infinities = infinities.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2))
     counter = zero
     prestigecounter = zero
     firstinfreached = true
-    autoclicker = zero
+    cgen0 = zero
     upg2b = one
     unlockedmulti = false
     unlockedcountergens = false
@@ -368,7 +367,7 @@ function upgrade1() {
  if (prestigecounter.equals(cost1) || prestigecounter.greaterThan(cost1)) {
   prestigecounter = prestigecounter.sub(cost1)
   cost1 = cost1.mul(2)
-  autoclicker = autoclicker.add(1)
+  cgen0 = cgen0.add(1)
   if (cost1.greaterThan('1e1000')) {
   document.getElementById("b").textContent = "+1 counter/s (costs "  + cost1.toStringWithDecimalPlaces(3) + " prestige counters"
   }
@@ -592,7 +591,7 @@ setInterval(function tick() {
   , p2 = document.getElementById("powercounter")
 
   // counter/s
-  counter = counter.add((autoclicker.divide(tps).mul(upg2b)).add(cgen1.divide(tps).mul(cgen1multi/2)))
+  counter = counter.add((cgen0.divide(tps).mul(upg2b)).add(cgen1.divide(tps).mul(cgen1multi/2)))
   // 
   if ((counter.greaterThan(inf) || counter.equals(inf)) && firstinfreached === false) {
   document.getElementById("maxmsg").textContent = "It seems like you have reached infinity. Power prestige to break infinity!"
