@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Operation incremental wiki</title>
+        <link rel="icon" type="image/png" href="images/plus.webp">
+        <meta property="og:title" content="Operation Incremetnal wiki">
+        <meta property="og:description" content="The official wiki for operation incremental (very WIP)">
+        <meta property="og:image" content="images/plus.webp">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Operation Incremental wiki</h1>
+        <h2>Game Guide</h2>
+        <p>WIP</p>
+        <p>&nbsp;</p>
+        <h2>Lore (yes there's lore)</h2>
+        <h3>The beginning</h3>
+        <p>WIP</p>
+        <h3>"Infinity"</h3>
+        <p>WIP</p>
+        <h3>??? and i</h3>
+        <p>WIP</p>
+        <h3>"Meaningless" numbers</h3>
+        <p>WIP</p>
+        <p>&nbsp;</p>
+        <h2>Features</h2>
+        <h3>Add</h3>
+        <p>Function: Adds counters by upg2b (counter = counter.add(upg2b))</p>
+        <h3>Multiply</h3>
+        <p>Function: Multiplies counters by upg8b (counter = counter.mul(upg8b))</p>
+        <h3>Power</h3>
+        <p>Function: Raises (exponent) counters by 1.001 (counter = counter.pow(1.001))</p>
+        <p>Trivia: if you try to use the power button with negative counters, ??? prevents you from using it and talks about i and breaks the 4th wall</p>
+        <h3>Prestige</h3>
+        <p>Function: Resets all progress below prestige to add prestige counters by the amount of counters divided by 10</p>
+        <p>(counter = zero; prestigecounter = prestigecounter.add(counter.divide(10)))</p>
+        <h3>Counter Generators</h3>
+        <p>Function: The 1st generator generates counters, the 2nd generates 1st generators, the 3rd generates 2nds, and so on. There are 9 generators in total</p>
+        <p>( counter = counter.add((cgen0.divide(tps).mul(upg2b)).add(cgen1.divide(tps).mul(cgen1multi/2)));
+             cgen1 = cgen1.add((cgen2.divide(tps).divide(20)).mul(cgen2multi));
+             cgen2 = cgen2.add(cgen3.divide(tps).divide(20).mul(cgen3multi));
+             cgen3 = cgen3.add(cgen4.divide(tps).divide(20).mul(cgen4multi));
+             cgen4 = cgen4.add(cgen5.divide(tps).divide(20).mul(cgen5multi));
+             cgen5 = cgen5.add(cgen6.divide(tps).divide(20).mul(cgen6multi));
+             cgen6 = cgen6.add(cgen7.divide(tps).divide(20).mul(cgen7multi));
+             cgen7 = cgen7.add(cgen8.divide(tps).divide(20).mul(cgen8multi));
+             cgen8 = cgen8.add(cgen9.divide(tps).divide(20).mul(cgen9multi)); )</p>
+        <p>Trivia: I stole this feature from antimatter dimensions cuz I couldn't think of an original feature lol</p>
+        <p>Counter/s is called cgen0 (0th counter generator) in the code</p>
+        <h3>Power prestige</h3>
+        <p>Function: Resets all progress below power prestige (including prestige) to add power counters and infinities by the logarithm of counters divided by the logarithm of infinity (1.8e308)</p>
+        <p>(powercounter = powercounter.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2)); infinities = infinities.add(((counter.log(10)).divide(inf.log(10))).toStringWithDecimalPlaces(2));)</p>
+        <p>&nbsp;</p>
+        <h2>Artwork</h2>
+        <h3>Banner</h3>
+        <img src="images/oi_banner.png" width="400px" height="300px">
+        <h3>Add</h3>
+        <img src="images/plus.webp" width="200px" height="200px">
+        <h3>Substract</h3>
+        <img src="images/substract.png" width="200px" height="200px">
+        <h3>Multiply</h3>
+        <img src="images/multiply.png" width="200px" height="200px">
+        <h3>Divide</h3>
+        <img src="images/divide.png" width="200px" height="200px">
+        <h3>Power</h3>
+        <img src="images/power.png" width="200px" height="200px">
+        <h3>Root</h3>
+        <img src="images/root_broken_render.png" width="200px" height="200px">
+        <h3>i</h3>
+        <img src="images/i.png" width="200px" height="200px">
+    </body>
+</html>
